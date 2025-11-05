@@ -1,0 +1,107 @@
+Card.jsx code
+import { motion } from "motion/react";
+
+const Card = ({ style, text, image, containerRef, delay = 0 }) => {
+  // Common physics-based animation setup
+  const fallAnimation = {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 4,     // lower damping = more bounce
+      mass: 1,      // slightly heavier feel
+      delay,
+    },
+  };
+
+  const commonProps = {
+    style,
+    whileHover: { scale: 1.05 },
+    drag: true,
+    dragConstraints: containerRef,
+    dragElastic: 0.6,
+    dragMomentum: true,
+    initial: { y: -300, opacity: 0 }, // start from above
+    animate: fallAnimation,
+  };
+
+  if (image && !text) {
+    return (
+      <motion.img
+        {...commonProps}
+        src={image}
+        className="absolute w-20 cursor-grab active:cursor-grabbing select-none"
+      />
+    );
+  }
+
+  return (
+    <motion.div
+      {...commonProps}
+      className="absolute px-3 py-3 text-xl text-center rounded-full ring ring-gray-700 
+      font-extralight bg-storm w-[12rem] cursor-grab active:cursor-grabbing select-none"
+    >
+      {text}
+    </motion.div>
+  );
+};
+
+export default Card;
+
+
+
+
+
+
+About ME.jsx Code(Grid-1)
+
+import { useRef, useEffect, useState } from "react";
+    const grid2Container = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // re-trigger animation
+          setIsVisible(false);
+          setTimeout(() => setIsVisible(true), 100); // small delay for reanimation
+        }
+      },
+      { threshold: 0.3 } // trigger when 30% of grid is visible
+    );
+
+    if (grid2Container.current) observer.observe(grid2Container.current);
+    return () => observer.disconnect();
+    }, []);
+
+
+
+
+<div className="flex items-end grid-default-color grid-1">
+                <div
+                    ref={grid2Container}
+                    className="flex items-center justify-center w-full h-full relative overflow-hidden"
+                >
+                    {/* Centered text */}
+                    <p className="absolute inset-0 flex items-center justify-center text-4xl md:text-5xl text-gray-500">
+                    CODE IS CRAFT
+                    </p>
+
+                    {isVisible && (
+                    <>
+                        {/* Text Cards */}
+                        <Card style={{ rotate: "75deg", bottom: "10%", left: "20%" }} text="GRASP" containerRef={grid2Container} delay={0.1} />
+                        <Card style={{ rotate: "-30deg", bottom: "20%", left: "45%" }} text="SOLID" containerRef={grid2Container} delay={0.2} />
+                        <Card style={{ rotate: "90deg", bottom: "15%", left: "70%" }} text="DESIGN PATTERNS" containerRef={grid2Container} delay={0.3} />
+                        <Card style={{ rotate: "-45deg", bottom: "18%", left: "0%" }} text="DESIGN PRINCIPLES" containerRef={grid2Container} delay={0.4} />
+                        <Card style={{ rotate: "20deg", bottom: "12%", left: "38%" }} text="SRP" containerRef={grid2Container} delay={0.5} />
+
+                        {/* Image Cards */}
+                        <Card style={{ rotate: "30deg", bottom: "10%", left: "70%" }} containerRef={grid2Container} image="assets/logos/csharp-pink.png" delay={0.6} />
+                        <Card style={{ rotate: "-45deg", bottom: "12%", left: "25%" }} containerRef={grid2Container} image="assets/logos/dotnet-pink.png" delay={0.7} />
+                        <Card style={{ rotate: "30deg", bottom: "15%", left: "10%" }} containerRef={grid2Container} image="assets/logos/blazor-pink.png" delay={0.8} />
+                    </>
+                    )}
+                </div>
+            </div>
