@@ -481,3 +481,40 @@ export const mySocials = [
     icon: "./assets/socials/instagram.svg",
   },
 ];
+export const experiences = [
+  {
+    title: "Software Developer",
+    job: "Web Development Projects (HTML, CSS, JavaScript)",
+    date: "2021-2023",
+    contents: [
+      "Built multiple responsive and visually appealing websites using HTML, CSS, and JavaScript.",
+      "Developed a Gaming Website with interactive UI and smooth animations.",
+      "Created a Soft Drink Restaurant Website, focusing on product showcases and intuitive user experience.",
+      "Designed a Clothing Brand Website blending modern aesthetics with cultural elements and optimized performance across devices.",
+    ],
+  },
+  {
+    title: "Back-End Developer",
+    job: "Final Year Project – 3D Accessories Platform",
+    date: "2023-2024",
+    contents: [
+      "Led the development of an E-Commerce Website for Mobile Accessories featuring 3D product visualization.",
+      "Integrated Three.js for real-time 3D interaction, allowing users to view products from all angles.",
+      "Focused on improving engagement through interactive 3D experiences and responsive design.",
+      "✅ Implemented secure API communication between frontend and backend to protect user and product data.",
+      "✅ Ensured customer data privacy through proper authentication and secure database handling.",
+      
+    ],
+  },
+  {
+    title: "Freelance Developer",
+    job: "Self-Employed",
+    date: "2025-Present",
+    contents: [
+      "Currently building a personal portfolio using React.js, Framer Motion, and Motion Framework for smooth, modern animations.",
+      "Continuously enhancing technical skills and expanding expertise in modern web development.",
+      "💾 Used MySQL to manage product and user data with efficient CRUD operations.",
+      "🗄️ Integrated MySQL for reliable data storage and backend functionality.",
+    ],
+  },
+];
