@@ -24,7 +24,7 @@ const ParallaxBackground = () => {
         <motion.div className='absolute inset-0 -z-40'
             style={{
                 // backgroundImage:"url(/assets/mountain-3.png)",
-                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-3.jpg)`,
+                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-3.png)`,
                 backgroundPosition:"bottom",
                 backgroundSize:"cover",
                 y:mountain3Y,
@@ -35,7 +35,7 @@ const ParallaxBackground = () => {
         <motion.div className='absolute inset-0 -z-30'
             style={{
                 // backgroundImage:"url(/assets/planets.png)",
-                backgroundImage: `url(${import.meta.env.BASE_URL}assets/planets.jpg)`,
+                backgroundImage: `url(${import.meta.env.BASE_URL}assets/planets.png)`,
                 backgroundPosition:"bottom",
                 backgroundSize:"cover",
                 x:planetsX,
@@ -45,7 +45,7 @@ const ParallaxBackground = () => {
         <motion.div className='absolute inset-0 -z-20'
             style={{
                 // backgroundImage:"url(/assets/mountain-2.png)",
-                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-2.jpg)`,
+                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-2.png)`,
                 backgroundPosition:"bottom",
                 backgroundSize:"cover",
                 y:mountain2Y,
@@ -55,7 +55,7 @@ const ParallaxBackground = () => {
         <motion.div className='absolute inset-0 -z-10'
             style={{
                 // backgroundImage:"url(/assets/mountain-1.png)",
-                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-1.jpg)`,
+                backgroundImage: `url(${import.meta.env.BASE_URL}assets/mountain-1.png)`,
                 backgroundPosition:"bottom",
                 backgroundSize:"cover",
                 y:mountain1Y,
