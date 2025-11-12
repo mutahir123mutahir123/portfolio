@@ -45,11 +45,25 @@ closeModal,
                             />
                         ))}
                     </div>
-                    <a className='inline-flex items-center gap-1 
+                    <a 
+                    href={href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className='inline-flex items-center gap-1 font-medium 
+                    hover-animation cursor-pointer'
+                    >
+                    View project 
+                    <img src='assets/arrow-up.svg' className='size-4' />
+                    </a>
+
+
+
+
+                    {/* <a className='inline-flex items-center gap-1 
                     font-medium hover-animation cursor-pointer '>
                         View projects <img src='assets/arrow-up.svg'
                         className='size-4' href={href}/>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </motion.div>
